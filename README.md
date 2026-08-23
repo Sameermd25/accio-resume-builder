@@ -1,10 +1,10 @@
 # AI Resume Builder
 
-An AI-powered resume builder that helps users create professional, ATS-friendly resumes with an easy-to-use interface. Users can enter their details, generate and customize resume content, preview their resume, and download it as a PDF.
+An AI-powered frontend resume builder that helps users create professional resumes with an easy-to-use interface. Users can enter their details, generate resume content with AI, preview their resume, and download it as a PDF.
 
 ## 🚀 Live Demo
 
-https://accio-resume-builder.vercel.app/
+**Frontend:** https://accio-resume-builder.vercel.app/
 
 ## 📌 Features
 
@@ -14,10 +14,7 @@ https://accio-resume-builder.vercel.app/
 * 👀 Real-time resume preview
 * 📄 Download resumes as PDF
 * 🎨 Responsive and modern UI
-* 🔐 User authentication and authorization
-* 💾 Save and manage resume data
 * ⚡ Fast and responsive application using Vite
-* 🗃️ MongoDB database for persistent data storage
 
 ## 🛠️ Tech Stack
 
@@ -32,18 +29,6 @@ https://accio-resume-builder.vercel.app/
 * jsPDF
 * html2canvas
 
-### Backend
-
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT
-* bcryptjs
-* Cookie Parser
-* CORS
-* dotenv
-
 ### AI
 
 * Google Gemini AI API
@@ -53,25 +38,16 @@ https://accio-resume-builder.vercel.app/
 ```text
 AI-Resume-Builder/
 │
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── slices/
-│   │   ├── assets/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   └── package.json
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── slices/
+│   ├── assets/
+│   ├── App.jsx
+│   └── main.jsx
 │
-├── backend/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── utils/
-│   ├── server.js
-│   └── package.json
-│
+├── public/
+├── package.json
 └── README.md
 ```
 
@@ -88,15 +64,9 @@ React Frontend
  └── Resume Preview
  │
  ▼
-Express.js API
- │
- ├── Authentication
- ├── Resume Management
- └── AI Integration
- │
  ├──────────────┐
  ▼              ▼
-MongoDB       Gemini AI
+Local State    Gemini AI
  │
  ▼
 Resume Data
@@ -121,19 +91,6 @@ AI can help improve or generate sections such as:
 * Work experience descriptions
 
 This helps users create clear and professional content while reducing the time required to write resume sections manually.
-
-## 🔑 Authentication
-
-The application uses **JWT-based authentication**.
-
-Authentication flow:
-
-1. User creates an account.
-2. Password is securely hashed using `bcryptjs`.
-3. User signs in.
-4. Server generates a JWT.
-5. JWT is stored using cookies.
-6. Protected routes verify the authenticated user before providing access to resume data.
 
 ## 📄 PDF Generation
 
@@ -173,49 +130,25 @@ git clone https://github.com/Sameermd25/accio-resume-builder.git
 cd accio-resume-builder
 ```
 
-### 2. Install frontend dependencies
+### 2. Install dependencies
 
 ```bash
-cd frontend
 npm install
 ```
 
-### 3. Install backend dependencies
+### 3. Configure environment variables
 
-```bash
-cd ../backend
-npm install
-```
-
-### 4. Configure environment variables
-
-Create a `.env` file inside the backend directory.
+Create a `.env` file in the project root.
 
 ```env
-PORT=4000
-
-MONGO_URI=your_mongodb_connection_string
-
-JWT_SECRET=your_jwt_secret
-
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
 > Never commit your `.env` file or expose API keys and other sensitive credentials in your GitHub repository.
 
-### 5. Start the backend
+### 4. Start the development server
 
 ```bash
-cd backend
-npm run dev
-```
-
-### 6. Start the frontend
-
-Open another terminal:
-
-```bash
-cd frontend
 npm run dev
 ```
 
@@ -223,12 +156,9 @@ The application will start using the Vite development server.
 
 ## 🔐 Environment Variables
 
-| Variable         | Description                        |
-| ---------------- | ---------------------------------- |
-| `PORT`           | Backend server port                |
-| `MONGO_URI`      | MongoDB connection string          |
-| `JWT_SECRET`     | Secret used for JWT authentication |
-| `GEMINI_API_KEY` | Google Gemini API key              |
+| Variable         | Description           |
+| ---------------- | --------------------- |
+| `GEMINI_API_KEY` | Google Gemini API key |
 
 ## 📱 Responsive Design
 
@@ -244,20 +174,16 @@ The UI adapts to different screen sizes while maintaining a consistent resume ed
 
 While developing this project, I worked with:
 
-* Building a full-stack MERN application
-* Integrating generative AI into a web application
+* Building a React frontend application
+* Integrating generative AI into a frontend application
 * Google Gemini API integration
-* JWT authentication
-* Password hashing
 * Redux Toolkit state management
-* REST API development
-* MongoDB and Mongoose
 * React component architecture
 * PDF generation with jsPDF
 * HTML-to-canvas conversion
 * Responsive UI development
 * Environment variable management
-* Frontend and backend deployment
+* Frontend deployment with Vercel
 
 ## 🔮 Future Improvements
 
